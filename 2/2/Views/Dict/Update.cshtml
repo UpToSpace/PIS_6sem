@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+    _2.Models.Data item = ViewBag.Find;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <div> Update
+    </div>
+    <form action="/Dict/UpdateSave" method="post">
+        <label for="id">id</label>
+        <input type="text" name="id" readonly value="@item.Id"/> <br />
+        <label for="surname">surname</label>
+        <input type="text" name="surname" value="@item.Surname" /> <br />
+        <label for="phonenumber">phonenumber</label>
+        <input type="text" name="phonenumber" value="@item.PhoneNumber" /> <br />
+        <input type="submit" name="submit" value="submit" />
+    </form>
+</body>
+</html>

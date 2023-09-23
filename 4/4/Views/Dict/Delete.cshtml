@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+    _4.Models.Data item = ViewBag.Find;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div>
+        Delete. Are you sure?
+    </div>
+    <form action="/Dict/DeleteSave" method="post">
+        <label for="id">id</label>
+        <input type="text" name="id" readonly value="@item.Id" /> <br />
+        <label for="surname">surname</label>
+        <input type="text" name="surname" readonly value="@item.Surname"/> <br />
+        <label for="phonenumber">phonenumber</label>
+        <input type="text" name="phonenumber" readonly value="@item.PhoneNumber"/> <br />
+        <input type="submit" name="submit" value="submit" />
+    </form>
+</body>
+</html>

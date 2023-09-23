@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>client</title>
+</head>
+<body>
+        <input type="number" id="x" />
+        *
+        <input type="number" id="y" />
+        <input type="submit" value="=" onclick="multiply()" />
+        <input type="number" readonly id="result"/>
+    <script>
+        function multiply() {
+        let result = document.getElementById("result");
+        let x = document.getElementById("x").value;
+        let y = document.getElementById("y").value;
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/3?x=" + x + "&y=" + y, true);
+        xhr.send();
+        xhr.onload = function() {
+        result.value = xhr.response;
+        };
+        }
+    </script>
+</body>
+</html>

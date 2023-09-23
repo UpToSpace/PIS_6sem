@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+    IEnumerable<_4.Models.Data> data = ViewBag.getAll;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Телефонный справочник</h1>
+        <table>
+            <tr> <th>id</th> <th>surname</th> <th>phone number</th> <th>Delete</th> <th>Update</th> </tr>
+            @foreach (_4.Models.Data item in data)
+            {
+                <tr> <th>@item.Id</th> <th>@item.Surname</th> <th>@item.PhoneNumber</th> <th><a href="/Dict/delete/@item.Id">Delete</a></th> <th><a href="/Dict/update/@item.Id">Update</a></th> </tr>
+            }
+        </table>
+</div>
+    <a href="/Dict/Add">Add</a>
+    <h1 style="color: red">@ViewBag.message</h1> 
+</body>
+</html>
